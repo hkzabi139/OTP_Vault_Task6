@@ -4,17 +4,14 @@ let score = 0;
 let attempts = 0;
 let isLocked = localStorage.getItem('vaultLocked') === 'true';
 
-// 1. Manual OTP Generation (Unique Algorithm)
 function generateNewOTP() {
     if (isLocked) return;
-    // Simple custom logic: Multiply random with date and take last 6 digits
     let raw = Math.floor(Math.random() * 900000) + 100000;
     generatedOTP = raw.toString();
     document.getElementById('current-otp').innerText = generatedOTP;
     resetTimer();
 }
 
-// 2. Countdown Timer Logic
 let timerId;
 function resetTimer() {
     timeLeft = 30;
@@ -24,15 +21,14 @@ function resetTimer() {
         document.getElementById('timer').innerText = timeLeft;
         if (timeLeft <= 0) {
             clearInterval(timerId);
-            generatedOTP = null; // OTP Expired
+            generatedOTP = null;
             document.getElementById('current-otp').innerText = "EXPIRED";
-            score -= 3; // OTP Expired penalty
+            score -= 3;
             updateScore();
         }
     }, 1000);
 }
 
-// 3. Verification & Throttling
 function verifyOTP() {
     if (isLocked) return alert("System Locked!");
 
@@ -40,13 +36,13 @@ function verifyOTP() {
     let msg = document.getElementById('msg');
 
     if (input === generatedOTP && generatedOTP !== null) {
-        score += 10; // Success
+        score += 10;
         msg.style.color = "#10b981";
         msg.innerText = "Access Granted!";
         showVault();
     } else {
         attempts++;
-        score -= 5; // Failed attempt
+        score -= 5;
         msg.style.color = "#f87171";
 
         if (attempts >= 3) {
@@ -60,8 +56,8 @@ function verifyOTP() {
 
 function triggerLock() {
     isLocked = true;
-    localStorage.setItem('vaultLocked', 'true'); // Persistence after refresh
-    score -= 15; // Lock penalty
+    localStorage.setItem('vaultLocked', 'true');
+    score -= 15;
     document.getElementById('msg').innerText = "SYSTEM LOCKED - Security Breach!";
     document.getElementById('gen-btn').disabled = true;
 }
@@ -79,4 +75,5 @@ function logout() {
     score += 5;
     localStorage.removeItem('vaultLocked');
     location.reload();
+
 }
