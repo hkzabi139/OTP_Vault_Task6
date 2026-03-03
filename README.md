@@ -2,7 +2,8 @@
 **Developer Super League 2026 | Aptech Metro Star Gate**
 
 ## 🚀 Live Deployment
-**Netlify Working URL:** cyber-otp-authenticator.netlify.app
+**Netlify Working URL:** https://cyber-otp-authenticator.netlify.app/
+
 **github Working URL:** https://hkzabi139.github.io/OTP_Vault_Task6/
 
 ## 🛠️ Project Features
