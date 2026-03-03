@@ -1,0 +1,82 @@
+body {
+    background: #0f172a;
+    color: white;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.box {
+    background: #1e293b;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    width: 350px;
+    border: 2px solid #3b82f6;
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+}
+
+.otp-display {
+    background: #000;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+#current-otp {
+    letter-spacing: 5px;
+    color: #60a5fa;
+    margin: 10px 0;
+}
+
+.timer-circle {
+    font-size: 20px;
+    color: #f87171;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 15px 0;
+    background: #334155;
+    border: 1px solid #475569;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 18px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #3b82f6;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:disabled {
+    background: #475569;
+    cursor: not-allowed;
+}
+
+.verify-btn {
+    background: #10b981;
+    margin-top: 10px;
+}
+
+#score-board {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #334155;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+}

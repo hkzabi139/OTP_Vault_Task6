@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Secure OTP Vault | DSL 2026</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <div class="container">
+        <div id="otp-panel" class="box">
+            <h2>🛡️ OTP Authenticator</h2>
+            <div id="score-board">Score: <span id="score">0</span></div>
+
+            <div class="otp-display">
+                <p>Your Current OTP:</p>
+                <h1 id="current-otp">----</h1>
+                <div class="timer-circle">
+                    <span id="timer">30</span>s
+                </div>
+            </div>
+
+            <button onclick="generateNewOTP()" id="gen-btn">Generate New OTP</button>
+
+            <hr>
+
+            <div class="verify-section">
+                <input type="text" id="otp-input" placeholder="Enter 6-digit OTP">
+                <button onclick="verifyOTP()" class="verify-btn">Verify & Unlock</button>
+                <p id="msg"></p>
+            </div>
+        </div>
+
+        <div id="vault-content" class="box" style="display:none;">
+            <h2>🔓 Vault Unlocked</h2>
+            <p>Welcome to your secure session.</p>
+            <div id="session-timer">Session expires in: <span id="s-timer">120</span>s</div>
+            <button onclick="logout()">Manual Logout</button>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
