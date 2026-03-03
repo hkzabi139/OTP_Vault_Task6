@@ -1,56 +1,23 @@
 # Task #6: Secure OTP-Based Vault System
 **Developer Super League 2026 | Aptech Metro Star Gate**
 
-## 🚀 Live Demo
-**Netlify Link:** [Yahan apna Netlify URL paste karein]
+## 🚀 Live Deployment
+**Working URL:** [Paste your Netlify Link here]
 
----
+## 🛠️ Project Features
+- **Dynamic OTP Generation:** A custom 6-digit numeric code generated client-side.
+- **30-Second Countdown:** Real-time visual timer for OTP expiry.
+- **Security Scoring System:** Real-time score tracking based on user actions.
+- **Account Lockout:** System locks after 3-5 failed attempts (Persists on refresh).
+- **Idle Session Logout:** Automatically logs out the user after 2 minutes of inactivity.
 
-## 🛠️ Project Overview
-Yeh project ek browser-based secure OTP authentication system hai. Ismein static password ki jagah dynamically generated codes use kiye gaye hain taake security behtar ho sake.
-
-### Key Features:
-- **Dynamic OTP Generation:** Har 30 seconds baad naya code banta hai.
-- **30-Second Countdown:** Real-time timer user ko expiry ki ittela deta hai.
-- **Account Lockout:** 3-5 failed attempts ke baad system automatically lock ho jata hai.
-- **Session Persistence:** Agar system lock ho jaye toh page refresh karne par bhi lock rehta hai.
-- **Security Scoring:** Har action (sahi/galat OTP) par score change hota hai.
-
----
-
-## 🧠 Mandatory Manual Logic (Student Implementation)
-
-### 1. OTP Generation Algorithm
-Maine `Math.random()` aur `timestamp` ko use karke ek custom logic banaya hai jo 6-digits ka unique numeric code generate karta hai. Maine koi ready-made library use nahi ki.
-
-### 2. Anti-Replay & Expiry Logic
-Har OTP ke saath ek 'timestamp' save hota hai. Agar 30 seconds guzar jayein ya ek baar code use ho jaye, toh system use invalidate kar deta hai taake replay attacks na hon.
-
-### 3. Brute-Force Protection
-Maine ek custom counter implement kiya hai jo failed attempts ko track karta hai. 3 failed attempts par `localStorage` mein 'lock' state set ho jati hai jo refresh karne par bhi khatam nahi hoti.
-
-### 4. Event Logging Structure
-Maine ek simple array structure design kiya hai jo har event (Login, Fail, Lockout, Timeout) ko score ke saath log karta hai.
-
----
+## 🧠 Mandatory Manual Logic
+- **OTP Algorithm:** I designed a custom algorithm using `Math.random()` and `Date.now()` to ensure unique, unpredictable codes.
+- **Brute-Force Protection:** Implemented an attempt-tracking counter that triggers a 'Lock State' stored in `localStorage` to prevent bypass via page refresh.
+- **Event Logging:** Designed a custom structure to log every security event (Success, Failure, Timeout) with its corresponding score change.
 
 ## 📝 Student Thinking Section
-
-**Q1: Why is client-side encryption weaker than server-side?**
-*Answer:* Client-side par code aur keys user ke browser mein hoti hain jahan koi bhi 'Inspect Element' karke logic dekh sakta hai. Server-side par logic hidden hota hai.
-
-**Q2: How can localStorage be tampered with?**
-*Answer:* Koi bhi user F12 (Developer Tools) khol kar 'Application' tab mein ja kar manually localStorage ki values change kar sakta hai.
-
-**Q3: What would you change in production?**
-*Answer:* Production mein main OTP ko SMS/Email ke zariye bhejunga aur validation server-side (Node.js/Python) par hogi na ke browser mein.
-
-**Q4: How would you make this multi-user?**
-*Answer:* Database (Firebase ya SQL) use karke har user ka alag profile aur unique secret key generate karunga.
-
----
-
-## 📂 Tech Stack
-- HTML5
-- CSS3 (Responsive Design)
-- JavaScript (Vanilla JS)
+1. **Why is client-side encryption weaker?** Logic and keys are exposed in the browser's source code, making them accessible via Developer Tools.
+2. **How can localStorage be tampered with?** Users can manually edit, delete, or inject values into the 'Application' tab of the Browser Console.
+3. **What would you change in production?** I would move OTP generation and validation to a secure backend (e.g., Node.js) and send codes via SMS/Email.
+4. **How would you make this multi-user?** By integrating a database (like Firebase or SQL) to manage separate user profiles and unique encryption salts.
