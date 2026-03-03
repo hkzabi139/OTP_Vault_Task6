@@ -2,7 +2,7 @@
 **Developer Super League 2026 | Aptech Metro Star Gate**
 
 ## 🚀 Live Deployment
-**Working URL:** [Paste your Netlify Link here]
+**github Working URL:** [https://hkzabi139.github.io/OTP_Vault_Task6/]
 
 ## 🛠️ Project Features
 - **Dynamic OTP Generation:** A custom 6-digit numeric code generated client-side.
@@ -17,7 +17,11 @@
 - **Event Logging:** Designed a custom structure to log every security event (Success, Failure, Timeout) with its corresponding score change.
 
 ## 📝 Student Thinking Section
-1. **Why is client-side encryption weaker?** Logic and keys are exposed in the browser's source code, making them accessible via Developer Tools.
-2. **How can localStorage be tampered with?** Users can manually edit, delete, or inject values into the 'Application' tab of the Browser Console.
-3. **What would you change in production?** I would move OTP generation and validation to a secure backend (e.g., Node.js) and send codes via SMS/Email.
-4. **How would you make this multi-user?** By integrating a database (like Firebase or SQL) to manage separate user profiles and unique encryption salts.
+1. **Why is client-side encryption weaker?**
+     Logic and keys are exposed in the browser's source code, making them accessible via Developer Tools.
+3. **How can localStorage be tampered with?** 
+     Users can manually edit, delete, or inject values into the 'Application' tab of the Browser Console.
+4. **What would you change in production?** 
+     I would move OTP generation and validation to a secure backend (e.g., Node.js) and send codes via SMS/Email.
+5. **How would you make this multi-user?** 
+     By integrating a database (like Firebase or SQL) to manage separate user profiles and unique encryption salts.
